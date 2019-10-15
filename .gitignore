@@ -1,3 +1,5 @@
 .vscode/
-.venv/
+.venv*
+__pycache__/
 *.code-workspace
+settings.json
