@@ -12,7 +12,7 @@ class RepeatSkill(MycroftSkill):
 
     def handle_remember_last(self, event):
         utterance = event.data['utterance']
-        self.last_spoken = utterance
+        self.last_spoken = utterance or "nothing"
         if self.last_spoken.startswith('I said, '):
             self.last_spoken = self.last_spoken.replace('I said, ', '')
         print(self.last_spoken)
