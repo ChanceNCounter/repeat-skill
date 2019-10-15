@@ -17,11 +17,8 @@ class RepeatSkill(MycroftSkill):
             self.last_spoken = self.last_spoken.replace('I said, ', '')
         print(self.last_spoken)
 
-    @intent_handler(IntentBuilder('repeat.last').require('Repeat').optionally(
-        'Testing'))
+    @intent_handler(IntentBuilder('repeat.last').require('Repeat'))
     def handle_repeat_last_intent(self, message):
-        if message.data.get('Testing') == "True":
-            self.speak('Testing')
         if self.last_spoken:
             self.speak('I said, ' + self.last_spoken)
         else:
